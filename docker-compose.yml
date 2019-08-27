@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    build:
+      context: . # where we want all the files and folders for this project to be pulled from. Here, current dir.
+      dockerfile: Dockerfile.dev # otherwise would default to 'Dockerfile'
+    ports:
+      - "3000:3000" # <outside container>:<inside>
+    volumes:
+      - /app/node_modules
+      - .:/app
+  tests:

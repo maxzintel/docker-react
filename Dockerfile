@@ -13,5 +13,6 @@ RUN npm run build
 # the outside world via the RUN phase.
 
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 # Check nginx docs on docker hub.
